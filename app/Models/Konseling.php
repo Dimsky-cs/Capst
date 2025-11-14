@@ -11,6 +11,8 @@ class Konseling extends Model
 
     protected $fillable = [
         'user_id',
+        'psikolog_id',
+        'session_preference',
         'client_name',
         'client_email',
         'client_phone',
@@ -24,5 +26,11 @@ class Konseling extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function psikolog()
+    {
+        // Relasi ke User, tapi menggunakan foreign key 'psikolog_id'
+        return $this->belongsTo(User::class, 'psikolog_id');
     }
 }

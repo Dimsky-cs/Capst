@@ -26,6 +26,7 @@ class User extends Authenticatable
         'provider_name',
         'provider_id',
         'provider_avatar',
+        'specialties',
     ];
 
     /**
@@ -46,6 +47,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        'specialties' => 'array',
     ];
 
     // --- LOGIKA HAK AKSES (ROLE CHECKERS) ---

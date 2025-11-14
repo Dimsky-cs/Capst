@@ -106,6 +106,16 @@ Route::middleware(['auth', 'role:user'])->prefix('user')->name('user.')->group(f
 });
 
 
+
+Route::prefix('api')->group(function () {
+
+    // Rute 1 (SUDAH BENAR)
+    Route::get('/psikologs-by-service', [\App\Http\Controllers\Api\BookingController::class, 'getPsikologsByService']);
+
+    // Rute 2 (INI YANG HARUS DIPERBAIKI)
+    Route::get('/available-times', [\App\Http\Controllers\Api\BookingController::class, 'getAvailableTimes']); // <-- PASTIKAN INI 'getAvailableTimes'
+
+});
 // --------------------------------------------------------------------------
 // GROUP RUTE PSIKOLOG (Contoh dari kode kamu yang di-comment)
 // --------------------------------------------------------------------------

@@ -65,7 +65,7 @@ public function handleProviderCallback($provider = 'google')
     } catch (\Exception $e) {
         // Jika terjadi kesalahan (misalnya Socialite error), kembalikan ke halaman login
         // Tampilkan error untuk debugging:
-        dd($e);
+        //dd($e);
         return redirect('/login')->with('error', 'Gagal login dengan Google: ' . $e->getMessage());
     }
 }
